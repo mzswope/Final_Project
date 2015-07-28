@@ -1,0 +1,38 @@
+<%= render "helpers/navbarForms" %>
+
+<div class="dogs new">
+	<h2>List of Dogs</h2>
+
+<%= link_to("Add Your Dog to the Site", {action: 'new'}, class: 'action new') %>
+
+  <table class="listing" summary="list of dogs">
+    <tr class="header">
+      
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Gender</th>
+      <th>Size</th>
+      <th>Age</th>
+      <th>Good with People</th>
+      <th>Good with Kids</th>
+      <th>Good with Other Dogs</th>
+    </tr>
+    <% @dogs.each do |dog| %>
+    <tr>
+      <td><%= image_tag dog.avatar.url :medium %></td>
+      <td><%= dog.name %></td>
+      <td><%= dog.breed %></td>
+      <td><%= dog.gender %></td>
+      <td><%= dog.size %></td>
+      <td><%= dog.age %></td>
+      <td><%= dog.people %></td>
+      <td><%= dog.kids %></td>
+      <td><%= dog.other_dogs %></td>
+        
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+

@@ -1,0 +1,62 @@
+<%= render "helpers/navbar" %>
+
+<div>
+	<div>
+		<img src="assets/background/dog-white-background.jpg" id="backgroundImage"/>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-8">
+				<form id="backgroundForm">
+							<h3>Find a Shelter Near You</h3>
+							<hr />
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6">
+							<h4>Near:</h4><input type="text" class="searchAddress" name="city" placeholder="City" /> &nbsp;&nbsp;or 
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6">	
+							<h4>Postal Code:</h4><input type="text" class="searchPostalCode" name="postalcode"/>
+						</div>
+					</div>
+					<br />	
+					<div>
+						<input type="checkbox"  name="myLocation" /> Use my current location
+					</div>
+					<br />
+					<div>
+						<button type="button" id="searchSendButton">Send</button>
+						<p id="location"></p>
+						<img src="" id="map">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12 col-md-9">
+		<h2>photo gallery</h2>
+		<hr />
+		<div class="grid effect-8">
+		  <div class="grid-sizer"></div>
+		  <div class="grid-item"><div class="content"></div></div>
+		  <div class="grid-item"><div class="content"></div></div>
+		  <div class="grid-item"><div class="content"></div></div>
+				  
+		</div>
+	</div>
+	
+	<aside class="col-xs-12 col-md-3" id="sidebarSponsor">
+		<h2 id="sponsorsH2">Sponsors</h2>
+		<div class="sponsorContainer">
+			<a href="#" alt="science diet link"><img src="assets/sponsors/ScienceDiet-Logo.png" title="science diet logo" id="sponsorScienceDiet"></a>
+			<p id="sponsorScienceDietQuote">The Science Behind Happy</p>
+		</div>
+		<div class="sponsorContainer"><a href="#" alt="pets-r-us link"><img src="assets/sponsors/Pets-R-Us_logo.jpg" title="pets-r-us logo" id="sponsorPetsRUs"></a></div>
+		<div class="sponsorContainer">
+			<img src="assets/sponsors/dogs_playing.jpg"/ title="dogs playing" id="sponsorPurinaDogsPlaying">
+			<a href="#" alt="purina link"><img src="assets/sponsors/Purina_logo.jpg" title="purina logo" id="sponsorPurina"></a></div>
+	</aside>
+</div>
+
+<%= render "helpers/footer" %>
+

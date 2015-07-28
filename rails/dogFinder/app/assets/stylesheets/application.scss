@@ -1,0 +1,360 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body	{
+	margin: 0;
+	font-family: "Arial Black";
+	font-size: 16px;
+}
+
+h1{font-size: 32px;}
+h4{font-size: 13px;}
+
+li	{
+	display: inline-block;
+	padding-right: .5 em;
+}
+
+a, a:hover, a:active	a:visited {
+	text-decoration: none;
+}
+
+li a{
+	font-size: 12px;
+	color: white;
+}
+
+a:hover	{
+	
+}
+
+.name	{
+	font-size: 17px;
+	border-radius: 5%;
+}
+
+hr	{
+	  background: #FAF7F5 !important;
+}
+
+/*-----Header-----*/
+
+.headerContainer	{
+	margin-top: 8px;
+}
+
+#headerNavigationContainer	{
+	float: left;
+	right: 55%;
+	height: 120px;
+}
+ 
+ .headerHeartLogo	{
+ 	float: left;
+ 	padding-left: 5px;
+ }
+ 
+ .headerTitleNavigationContainer	{
+ 	float: right;
+ }
+ 
+ #headerH1	{
+ 	color: #827A74;
+ }
+ 
+
+.headerAllSearchContainer	{
+	float: right;
+	text-align: right;
+	left: 45%;
+	height: 120px;
+}
+
+.headerLanguageContainer	{
+	margin-right: 10px;
+}
+
+.headerSearchButtonContainer	{
+	margin-right: 10px;
+}
+
+.headerSearchButton	{
+	display: inline-block;
+	padding-right: 8px;
+}
+
+#headerLogin	{
+	font-weight: 300;
+	color: #818A91;
+}
+
+#buttonJoin	{
+	background-color: #827A74;
+	padding-left: 6px;
+	padding-right: 6px;
+	font-size: 16px;
+	color: white;
+	border-radius: 15%;
+}
+
+.headerQuoteContainer	{
+	background-color: #8A8179;
+	clear: both;
+	position: relative;
+	margin-left: -15px;
+	margin-right: -15px;
+	width: 100%;
+	height: 35px;
+}
+
+#headerQuote	{
+	padding-top: 5px;
+	text-align: center;
+	color: white;
+}
+
+#headerQuoted	{
+	color:#A1B5C7;
+}
+
+/*---Header Dropdown Menu----*/
+
+.dropdown	{
+	display: inline-block;
+}
+
+.dropMenuTitles	{
+	font-size: 1em;
+	color: #B31518;
+}
+
+.caret	{
+	margin-right: 5px;
+	font-size: 10px;
+	color: #B31518;
+}
+
+.dropdown-menu li, .dropdown-menu li a	{	
+	display: block;
+	font-size: 12px;
+	color: #B31518;
+}
+
+.dropdown-menu li:hover, .dropdown-menu li a:hover	{
+	color: #8A8179;
+	text-decoration: none;
+}
+
+/*---Image Slide---*/
+
+#backgroundImage	{
+	float: right;
+	width: 75%;
+	height: 450px;
+}
+
+#backgroundForm {
+  position: absolute;
+  background: #B31518;
+  margin-left: 5%;
+  bottom: 30px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 540px;
+  color: #fff;
+  border-radius: 10px;
+  z-index: 8;
+}
+
+.searchAddress, .searchPostalCode	{
+	font-size: 13px;
+	z-index: 8;
+}
+
+.searchPostalCode	{
+	width: 80px;
+}
+
+#searchSendButton {
+    background-color: #827A74;
+    color: #fff;
+    border-radius: 10%;
+}
+
+/*---Photo Gallery---*/
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  margin-left: 3%;
+  background: #fff;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+}
+
+.grid-item {
+  float: left;
+
+  /*---vertical gutter-----*/
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.content	{
+  margin: 5px;
+  width: auto;
+  height: 150px;
+  background: #827A74;
+}
+.grid-item--height2 { height: 250px; }
+.grid-item--height3 { height: 300px; }
+
+
+/*---Sponsor side bar---*/
+
+#sidebarSponsor	{
+	padding-bottom: 8px;
+}
+
+#sponsorsH2	{
+	width: 85%;
+	text-align: right;
+	font-weight: 600;
+	color: #817482;
+}
+
+.sponsorContainer	{
+	margin-top: 8px;
+	width: 85%;
+	height: 220px;
+	border: 1.5px solid #817482;
+}
+
+#sponsorScienceDiet	{
+	margin-left: 8%;
+	margin-top: 5%;
+	width: 85%;
+}
+
+#sponsorScienceDietQuote	{
+	margin-top: 6px;
+	text-align:center;
+	font-size: 1.7em;
+	font-variant: small-caps;
+	font-weight: 600;
+	color: #003A9A;
+}
+
+#sponsorPetsRUs	{
+	margin-left: 12%;
+	margin-top: 5%;
+}
+
+#sponsorPurinaDogsPlaying	{
+	margin: auto;
+	width: 100%;
+	height: 160px;
+}
+
+#sponsorPurina	{
+	float: right;
+}
+
+/*---Footer---*/
+
+.container-fluid	{
+	background-color: #6B645D;
+	padding-top: 15px;
+	height: 160px;
+}
+
+.footerList	{
+	display: block;
+	font-size: 1em;
+	color: #fff;
+}
+
+.footerList2	{
+	display: block;
+	font-size: 1em;
+	color: white;
+}
+
+.footerList3	{
+	display: inline-block;
+	color: white;
+}
+
+.footerAddOrgParagraph	{
+	color: #fff;
+}
+
+#footerAddOrganization	{
+	margin-top: 10px;
+}
+
+
+#footerBottomContainer	{
+	background-color: #6B645D;
+}
+
+.footerCopyright	{
+	float: right;
+	font-size: 12px;
+	color: #fff;		
+}
+
+#footerSocialMediaText	{
+	font-size: .80em;
+	color: #fff;
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+

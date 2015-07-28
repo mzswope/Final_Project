@@ -1,0 +1,21 @@
+// Place all the styles related to the dog controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+th 	{
+	width: 75px;
+	height: 50px;
+	border: 2.5px solid black;
+}
+
+td	{
+	width: 75px;
+	height: 50px;
+	border: 1px solid black;
+}
+
+//--Add/Edit/Delete dogs forms---
+
+.formDog	{
+	margin-left: 20px;
+}
