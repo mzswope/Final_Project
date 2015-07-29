@@ -1,7 +1,11 @@
 class DogsController < ApplicationController
 
+	def dogs
+		render :index
+	end
+
 	def index
-     	@dogs = Dog.all.sort
+     	@dogs = Dog.all
   	end
 
 	def new
@@ -12,6 +16,7 @@ class DogsController < ApplicationController
 		@dog = Dog.new(dog_params)
 
 		if @dog.save
+			flash[:notice] = "Your record has been successfully created"
 			redirect_to action: 'index'
 		else
 			render('new')
@@ -19,25 +24,29 @@ class DogsController < ApplicationController
 	end
 
 	def show
-		@dog = Dog.find_by(params[:id])
+		@dog = Dog.find(params[:id])
 	end
 
 	def edit
-		@dog = Dog.find_by(params[:id])
+		@dog = Dog.find(params[:id])
 	end
 
 	def update
-		@dog = Dog.find_by(params[:id])
+		@dog = Dog.find(params[:id])
 
 
 		if @dog = update.attributes(dog_params)
+			flash[:notice] = "Your record has been successfully updated"
 			redirect_to action: 'show', id: @dog.id
 		else
 			render('edit')
 		end
 	end
 
-	def delete
+	def destroy
+		@dog = Dog.find(params[:id]).destroy
+		flash[:notice] = "#{@dog.name} has been deleted"
+		redirect_to action: 'index'
 	end
 
 	private

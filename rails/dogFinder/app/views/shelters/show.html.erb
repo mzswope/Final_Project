@@ -1,0 +1,83 @@
+<%= render "helpers/navbarForms" %>
+
+<% if !flash[:notice].blank? %>
+  <div class="shelterFLashNotice formShelter">
+    <%=flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="shelterShow formShelter">
+  
+  <h2>Shelter Details</h2>
+
+  <table class="showTable" summary="Shelter detail view">
+  
+    <tr>
+      <th class="showListTitles">Shelter Logo</th>
+      <td class="showListDetails"><%= image_tag @shelter.avatar.url :thumb %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Name</th>
+      <td class="showListDetails"><%= @shelter.name %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Street Address</th>
+      <td class="showListDetails"><%= @shelter.address %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">City</th>
+      <td class="showListDetails"><%= @shelter.city %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Providence</th>
+      <td class="showListDetails"><%= @shelter.providence %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Postal Code</th>
+      <td class="showListDetails"><%= @shelter.postal_code %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Phone</th>
+      <td class="showListDetails"><%= @shelter.phone %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Website</th>
+      <td class="showListDetails"><%= @shelter.website %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Email</th>
+      <td class="showListDetails"><%= @shelter.email %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Hours of Operation</th>
+      <td class="showListDetails"><%= @shelter.hours %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Created</th>
+      <td class="showListDetails"><%= @shelter.created_at %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Updated</th>
+      <td class="showListDetails"><%= @shelter.updated_at %></td>
+    </tr>
+    <tr>
+      <th class="showListTitles">Update Shelter Record</th>
+      <td>
+        <%= link_to("Edit Record", action: 'edit', id: @shelter.id, class: 'action edit') %>
+      </td>
+    </tr>   
+    <tr>
+      <th class="showListTitles">Permanently Delete Shelter Record</th>
+      <td>
+        <%= link_to("Delete Record", action: 'destroy', id: @shelter.id, class: 'action delete') %>
+      </td>
+    </tr>  
+  </table>
+    <br />
+
+  <a href="../dogs" title="link to list of dogs">View List of Dogs</a>
+  <br />
+  <%= link_to("Back to Shelter List", action: 'index', class: 'back-link') %>
+
+
+</div>

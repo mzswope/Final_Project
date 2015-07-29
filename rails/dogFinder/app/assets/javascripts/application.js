@@ -34,33 +34,6 @@ $(document).ready(function(){
 	$("#headerQuote").text(quoteArray[Math.floor(Math.random()*quoteArray.length)]);
 })
 
-// var dogQuote = document.getElementById("headerQuote");
-// var quoteArray = ["Once you have had a wonderful dog, a life without one, is a life diminished", "If there are no dogs in Heaven, then when I die I want to go where they went", "The average dog is a nicer person than the average person", "A dog will teach you unconditional love. If you can have that in your life, things won't be too bad", "When an eighty-five pound mammal licks your tears away, then tries to sit on your lap, it's hard to feel sad", "A dog is the only thing on earth that loves you more than you love yourself", "Dogs are not our whole life, but they make our lives whole"];
-// var quoteIndex	= 0;
-// 
-// function changeQuote (){
-	// dogQuote.setAttribute("src", quoteArray[quoteIndex]);
-	// quoteIndex++;
-		// if (quoteIndex >=quoteArray.length){
-			// quoteIndex = 0;
-		// }
-// }
-// 
-// var intervalHandler	=	setInterval(changeQuote, windows.onload);
-
-// var	personQuoted = document.getElementById("headerQuoted");
-// var quotedArray = ["~ dean koontz", "~ will rogers", "—Andy Rooney", "—Robert Wagner", "―Kristan Higgins", "-Josh Billings", "-Roger Caras"];
-// var quotedIndex	= 0;
-// 
-// function changeQuoted (){
-	// dogQuote.setAttribute("src", quoteArray[quotedIndex]);
-	// quotedIndex++;
-		// if (quotedIndex >=quotedArray.length){
-			// quotedIndex = 0;
-		// }
-// }
-// 
-// var intervalHandler	=	setInterval(changeQuoted, windows.onload);
 
 //----Background images----
 
@@ -77,6 +50,11 @@ $(document).ready(function(){
 // }
 // 
 // var intervalHandler	=	setInterval(changeImage, 5000);
+
+
+// -----Photo Gallery------
+
+
 
 //---location finder----
 

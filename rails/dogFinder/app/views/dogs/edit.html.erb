@@ -1,5 +1,5 @@
 <div>
-  <%= form_for(:dog, :url => {action:'update', id: @dog.id}) do |f| %>
+  <%= form_for html: { :multipart => true } do |f| %>
 
   <h2>Edit your dog's information here:</h2>
   
@@ -8,6 +8,10 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div> <br />
+
+    <h3>Image file</h3>
+    <%= f.file_field :avatar %>
+    <br />
 
   <%= f.label :breed %>
   <%= f.text_field :breed %>
@@ -53,9 +57,7 @@
           <label for="other_dogs friendly">No</label>
       </li>
     </ul>
-  <h3>Image file</h3>
-    <%= f.file_field :avatar %>
-    <br />
+
   <%= f.submit "update" %>
 </div>
 

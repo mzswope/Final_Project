@@ -1,44 +1,49 @@
-<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %>
+<%= render "helpers/navbarForms" %>
 
-<div class="dog show">
-  <h2>Show Subject</h2>
+<% if !flash[:notice].blank? %>
+  <div class="dogFLashNotice">
+    <%=flash[:notice] %>
+  </div>
 
-  <table summary="Dog detail view">
+<div class="dogShow">
+  <h2>Dog Details View</h2>
+
+  <table class="listings" summary="Dog detail view">
   
     <tr>
-      <th>Photo</th>
+      <%= f.label :avatar %>
       <td><%= @dog.avatar %></td>
     </tr>
     <tr>
-      <th>Name</th>
+      <%= f.label :name %>
       <td><%= @dog.name %></td>
     </tr>
     <tr>
-      <th>Breed</th>
+      <%= f.label :breed %>
       <td><%= @dog.breed %></td>
     </tr>
     <tr>
-      <th>Gender</th>
+      <%= f.label :gender %>
       <td><%= @dog.gender %></td>
     </tr>
     <tr>
-      <th>Size</th>
+      <%= f.label :size %>
       <td><%= @dog.size %></td>
     </tr>
     <tr>
-      <th>Age</th>
+      <%= f.label :age %>
       <td><%= @dog.age %></td>
     </tr>
     <tr>
-      <th>Good with People</th>
+      <%= f.label :people %>
       <td><%= @dog.people %></td>
     </tr>
     <tr>
-      <th>Good with Kids</th>
+      <%= f.label :kids %>
       <td><%= @dog.kids %></td>
     </tr>
     <tr>
-      <th>Good with Other Dogs</th>
+      <%= f.label :other_dogs %>
       <td><%= @dog.other_dogs %></td>
     </tr>
     <tr>
@@ -50,3 +55,8 @@
       <td><%= @dog.updated_at %></td>
     </tr>
   </table>
+    <br /><br />
+
+<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %>
+
+</div>

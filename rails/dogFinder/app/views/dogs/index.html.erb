@@ -1,12 +1,18 @@
 <%= render "helpers/navbarForms" %>
 
-<div class="dogs new">
+<% if !flash[:notice].blank? %>
+  <div class="dogFLashNotice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+  
+<div class="dogsNew">
 	<h2>List of Dogs</h2>
 
-<%= link_to("Add Your Dog to the Site", {action: 'new'}, class: 'action new') %>
+  <%= link_to("Add Your Dog to the Site", {action: 'new'}, class: 'action new') %>
 
   <table class="listing" summary="list of dogs">
-    <tr class="header">
+    <tr class="dogsTableHeader">
       
       <th>Photo</th>
       <th>Name</th>
@@ -17,21 +23,25 @@
       <th>Good with People</th>
       <th>Good with Kids</th>
       <th>Good with Other Dogs</th>
+      <th>View Details/Edit/Delete Record</th>
     </tr>
     <% @dogs.each do |dog| %>
-    <tr>
-      <td><%= image_tag dog.avatar.url :medium %></td>
-      <td><%= dog.name %></td>
-      <td><%= dog.breed %></td>
-      <td><%= dog.gender %></td>
-      <td><%= dog.size %></td>
-      <td><%= dog.age %></td>
-      <td><%= dog.people %></td>
-      <td><%= dog.kids %></td>
-      <td><%= dog.other_dogs %></td>
-        
-      </td>
-    </tr>
+      <tr>
+        <td><%= image_tag dog.avatar.url :medium %></td>
+        <td><%= dog.name %></td>
+        <td><%= dog.breed %></td>
+        <td><%= dog.gender %></td>
+        <td><%= dog.size %></td>
+        <td><%= dog.age %></td>
+        <td><%= dog.people %></td>
+        <td><%= dog.kids %></td>
+        <td><%= dog.other_dogs %></td>
+        <td>
+          <%= link_to("View Details", action: 'show', id: dog.id, class: 'action show') %>
+          <%= link_to("Edit Record", action: 'edit', id: dog.id, class: 'action edit') %>
+          <%= link_to("Delete Record", action: 'destroy', id: dog.id, class: 'action delete') %>
+        </td>
+      </tr>
     <% end %>
   </table>
 </div>

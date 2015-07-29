@@ -163,146 +163,13 @@ hr	{
 
 /*---Image Slide---*/
 
-#backgroundImage	{
-	float: right;
-	width: 75%;
-	height: 450px;
-}
-
-#backgroundForm {
-  position: absolute;
-  background: #B31518;
-  margin-left: 5%;
-  bottom: 30px;
-  padding: 20px 30px;
-  width: 100%;
-  max-width: 540px;
-  color: #fff;
-  border-radius: 10px;
-  z-index: 8;
-}
-
-.searchAddress, .searchPostalCode	{
-	font-size: 13px;
-	z-index: 8;
-}
-
-.searchPostalCode	{
-	width: 80px;
-}
-
-#searchSendButton {
-    background-color: #827A74;
-    color: #fff;
-    border-radius: 10%;
-}
-
-/*---Photo Gallery---*/
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body { font-family: sans-serif; }
-
-/* ---- grid ---- */
-
-.grid {
-  margin-left: 3%;
-  background: #fff;
-}
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- grid-item ---- */
-
-.grid-sizer,
-.grid-item {
-  width: 33%;
-}
-
-.grid-item {
-  float: left;
-
-  /*---vertical gutter-----*/
-  margin-bottom: 10px;
-  background: #fff;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-
-.content	{
-  margin: 5px;
-  width: auto;
-  height: 150px;
-  background: #827A74;
-}
-.grid-item--height2 { height: 250px; }
-.grid-item--height3 { height: 300px; }
-
-
-/*---Sponsor side bar---*/
-
-#sidebarSponsor	{
-	padding-bottom: 8px;
-}
-
-#sponsorsH2	{
-	width: 85%;
-	text-align: right;
-	font-weight: 600;
-	color: #817482;
-}
-
-.sponsorContainer	{
-	margin-top: 8px;
-	width: 85%;
-	height: 220px;
-	border: 1.5px solid #817482;
-}
-
-#sponsorScienceDiet	{
-	margin-left: 8%;
-	margin-top: 5%;
-	width: 85%;
-}
-
-#sponsorScienceDietQuote	{
-	margin-top: 6px;
-	text-align:center;
-	font-size: 1.7em;
-	font-variant: small-caps;
-	font-weight: 600;
-	color: #003A9A;
-}
-
-#sponsorPetsRUs	{
-	margin-left: 12%;
-	margin-top: 5%;
-}
-
-#sponsorPurinaDogsPlaying	{
-	margin: auto;
-	width: 100%;
-	height: 160px;
-}
-
-#sponsorPurina	{
-	float: right;
-}
 
 /*---Footer---*/
 
 .container-fluid	{
 	background-color: #6B645D;
 	padding-top: 15px;
-	height: 160px;
+	height: 175px;
 }
 
 .footerList	{
@@ -326,8 +193,11 @@ body { font-family: sans-serif; }
 	color: #fff;
 }
 
-#footerAddOrganization	{
-	margin-top: 10px;
+#footerShelterButton	{
+	float: right;
+	background-color: #B31518;
+    color: #fff;
+    border-radius: 10%;
 }
 
 
@@ -346,6 +216,7 @@ body { font-family: sans-serif; }
 	color: #fff;
 }
 
+
 .fa {
   display: inline-block;
   font-family: FontAwesome;
@@ -355,6 +226,8 @@ body { font-family: sans-serif; }
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 
 

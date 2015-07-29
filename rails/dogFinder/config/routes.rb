@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   
   root "sites#home"
 
-  resources :shelters, only: [:show, :new, :create, :edit, :update]
-  resources :dogs, only: [:index, :show, :new, :create, :edit, :update]
+  resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   
   get "/what-to-expect" => "sites#expect"
+
 
 
   # default route

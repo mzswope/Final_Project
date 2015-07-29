@@ -1,3 +1,138 @@
 // Place all the styles related to the Sites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#backgroundImage	{
+	float: right;
+	width: 75%;
+	height: 450px;
+}
+
+#backgroundForm {
+  position: absolute;
+  background: #B31518;
+  margin-left: 5%;
+  bottom: 30px;
+  padding: 20px 30px;
+  width: 100%;
+  max-width: 540px;
+  color: #fff;
+  border-radius: 10px;
+  z-index: 8;
+}
+
+.searchAddress, .searchPostalCode	{
+	font-size: 13px;
+	z-index: 8;
+}
+
+.searchPostalCode	{
+	width: 80px;
+}
+
+#searchSendButton {
+    background-color: #827A74;
+    color: #fff;
+    border-radius: 10%;
+}
+
+/*---Photo Gallery---*/
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+.grid {
+  margin-left: 3%;
+  background: #fff;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+}
+
+.grid-item {
+  float: left;
+
+  /*---vertical gutter-----*/
+  margin-bottom: 10px;
+  background: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.content	{
+  margin: 5px;
+  width: auto;
+  height: 150px;
+  background: #827A74;
+}
+.grid-item--height2 { height: 250px; }
+.grid-item--height3 { height: 300px; }
+
+
+/*---Sponsor side bar---*/
+
+#sidebarSponsor	{
+	padding-bottom: 8px;
+}
+
+#sponsorsH2	{
+	width: 85%;
+	text-align: right;
+	font-weight: 600;
+	color: #817482;
+}
+
+.sponsorContainer	{
+	margin-top: 8px;
+	width: 85%;
+	height: 220px;
+	border: 1.5px solid #817482;
+}
+
+#sponsorScienceDiet	{
+	margin-left: 8%;
+	margin-top: 5%;
+	width: 85%;
+}
+
+#sponsorScienceDietQuote	{
+	margin-top: 6px;
+	text-align:center;
+	font-size: 1.7em;
+	font-variant: small-caps;
+	font-weight: 600;
+	color: #003A9A;
+}
+
+#sponsorPetsRUs	{
+	margin-left: 12%;
+	margin-top: 5%;
+}
+
+#sponsorPurinaDogsPlaying	{
+	margin: auto;
+	width: 100%;
+	height: 160px;
+}
+
+#sponsorPurina	{
+	float: right;
+}
+

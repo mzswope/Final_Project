@@ -1,0 +1,60 @@
+<%= render "helpers/navbarForms" %>
+
+<div class="formShelter">
+	<%= form_for @shelter, html: { :multipart => true } do |f| %>
+
+	<h2>Enter your shelter information:</h2>
+	<br />
+	<div class="formShelterName">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div> <br />
+	<%= f.label :avatar %>
+	<%= f.file_field :avatar %>
+		<br />
+
+	<%= f.label :address %>
+	<%= f.text_field :address %>
+	<br />
+	<%= f.label :city %>
+	<%= f.text_field :city %>
+	<br />
+	<%= f.label :providence %>
+	<%= f.text_field :providence %>
+	<br />
+	<%= f.label :postal_code %>
+	<%= f.text_field :postal_code %>
+	<br /><br />
+
+	<%= f.label :phone %>
+	<%= f.text_field :phone %>
+	<br /><br />
+
+	<%= f.label :website %>
+	<%= f.text_field :website %>
+	<br /><br />
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<br /><br />
+
+	<%= f.label :hours %>
+	<%= f.text_field :hours %>
+	<br /><br />
+
+	<%= f.label :volunteers %>
+				<br />
+					<%= radio_button_tag(:volunteers, "yes") %>
+					<label for="volunteers male">Yes</label>
+
+					<%= radio_button_tag(:volunteers, "no") %>
+					<label for="volunteers female">No</label>
+		<br /><br />
+
+
+	<%= f.submit "Create" %>
+
+	<% end %>
+	<br /><br />
+	<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %>
+</div>
