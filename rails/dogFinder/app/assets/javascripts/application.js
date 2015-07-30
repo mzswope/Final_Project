@@ -56,45 +56,40 @@ $(document).ready(function(){
 
 
 
-//---location finder----
 
-if ("geolocation" in navigator) {
-  var button = document.getElementById('searchSendButton');
-  button.addEventListener('click', getLocation);
-} else {
-  alert("Geolocation is not available")
-}
+// ---Search for a Shelter on background-----
 
-function getLocation() {
-  console.log('Getting location...'); 
-  navigator.geolocation.getCurrentPosition(onLocation, onError, options);
-}
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
+$(function() {
 
-function onLocation (position) {
-  console.log("Got it!");
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
-  document.getElementById('location').innerHTML = "Your are within 50km of these shelters";
-  displayMap(lat, lon);
-}
+var map;
 
-function onError(error) {
-  console.log("Getting location failed: " + error);
-}
+function initialize () {
+    var mapOptions = {
+      zoom: 12,
+      center: new google.maps.LatLng(41.3917782, 2.1772809999999936)   
+  };
 
-function displayMap(lat, lon) {
-  var urlRoot = "https://maps.googleapis.com/maps/api/staticmap?center=";
-  var urlParams = "&zoom=11&size=480x300&maptype=roadmap&markers=color:blue%7Clabel:A%7C";
-  var url = urlRoot + lat + "," + lon + urlParams + lat + "," + lon;
-  var map = document.getElementById('map');
-  map.setAttribute("src", url);
-  console.log(url);
+    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  };
+google.maps.event.addDomListener(window, 'load', initialize);
+
+$('#mapModal').on('shown.bs.modal', function () {
+  $('#mapInput').focus()
+})
+});
+
+
+// ---Photo Gallery Pop-up Window----
+
+$('#dogModal<%= @dog.id %>').on('shown.bs.modal', function () {
+  $('#dogInput').focus()
+})
+
+// ---Footer-----
+
+function footerShelterClick() {
+  window.open("/shelters", "_self");
 }
 
 
