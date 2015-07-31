@@ -35,7 +35,7 @@ class DogsController < ApplicationController
 		@dog = Dog.find(params[:id])
 
 
-		if @dog = update.attributes(dog_params)
+		if @dog.update_attributes(dog_params)
 			flash[:notice] = "Your record has been successfully updated"
 			redirect_to action: 'show', id: @dog.id
 		else

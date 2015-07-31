@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+table	{
+	margin: auto;
+	width: 95%;
+}
+
 th 	{
 	width: 75px;
 	height: 50px;
@@ -16,6 +21,6 @@ td	{
 
 //--Add/Edit/Delete dogs forms---
 
-.formDog	{
-	margin-left: 20px;
+.dogForm, .dogShow, .dogNew	{
+	margin: 0 10px 0 10px;
 }

@@ -58,26 +58,39 @@ $(document).ready(function(){
 
 
 // ---Search for a Shelter on background-----
-
+$('#mapModal').on('shown.bs.modal', function () {
+  $('#mapInput').focus()
+});
 
 $(function() {
 
 var map;
 
 function initialize () {
+
+	var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
     var mapOptions = {
       zoom: 12,
-      center: new google.maps.LatLng(41.3917782, 2.1772809999999936)   
-  };
+      center: myLatlng  
+  }
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  };
-google.maps.event.addDomListener(window, 'load', initialize);
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  
 
-$('#mapModal').on('shown.bs.modal', function () {
-  $('#mapInput').focus()
-})
+	var marker = new google.maps.Marker({
+		    position: myLatlng,
+		    map: map,
+		    title:"Hello World!"
+
+	});
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
 });
+
+
+
+// To add the marker to the map, call setMap();
+marker.setMap(map);
 
 
 // ---Photo Gallery Pop-up Window----

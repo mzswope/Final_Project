@@ -1,5 +1,7 @@
-<div>
-  <%= form_for html: { :multipart => true } do |f| %>
+<%= render "helpers/navbarForms" %>
+
+<div class="dogForm">
+  <%= form_for @dog do |f| %>
 
   <h2>Edit your dog's information here:</h2>
   

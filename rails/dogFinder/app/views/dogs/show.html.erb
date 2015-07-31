@@ -4,6 +4,7 @@
   <div class="dogFLashNotice">
     <%=flash[:notice] %>
   </div>
+  <% end %>
 
 <div class="dogShow">
   <h2>Dog Details View</h2>
@@ -11,39 +12,39 @@
   <table class="listings" summary="Dog detail view">
   
     <tr>
-      <%= f.label :avatar %>
-      <td><%= @dog.avatar %></td>
+      <th>Photo</th>
+      <td><%= image_tag @dog.avatar.url :thumb %></td>
     </tr>
     <tr>
-      <%= f.label :name %>
+      <th>Name</th>
       <td><%= @dog.name %></td>
     </tr>
     <tr>
-      <%= f.label :breed %>
+      <th>Breed</th>
       <td><%= @dog.breed %></td>
     </tr>
     <tr>
-      <%= f.label :gender %>
+      <th>Gender</th>
       <td><%= @dog.gender %></td>
     </tr>
     <tr>
-      <%= f.label :size %>
+      <th>Size</th>
       <td><%= @dog.size %></td>
     </tr>
     <tr>
-      <%= f.label :age %>
+      <th>Age</th>
       <td><%= @dog.age %></td>
     </tr>
     <tr>
-      <%= f.label :people %>
+      <th>Good with People</th>
       <td><%= @dog.people %></td>
     </tr>
     <tr>
-      <%= f.label :kids %>
+      <th>Good with Kids</th>
       <td><%= @dog.kids %></td>
     </tr>
     <tr>
-      <%= f.label :other_dogs %>
+      <th>Good with Other Dogs</th>
       <td><%= @dog.other_dogs %></td>
     </tr>
     <tr>
@@ -53,6 +54,10 @@
     <tr>
       <th>Updated</th>
       <td><%= @dog.updated_at %></td>
+    </tr>
+    <tr>
+      <th>Edit Contents</th>
+      <td><%= link_to("Edit Record", action: 'edit', id: @dog.id, class: 'action edit') %></td>
     </tr>
   </table>
     <br /><br />

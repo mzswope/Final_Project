@@ -1,7 +1,7 @@
 class SheltersController < ApplicationController
 
 	def index
-     	@shelters = Shelter.all.sort
+     	@shelters = Shelter.all
   	end
 
 	def new
@@ -31,7 +31,7 @@ class SheltersController < ApplicationController
 		@shelter = Shelter.find(params[:id])
 
 
-		if @shelter = update.attributes(shelter_params)
+		if @shelter.update_attributes(shelter_params)
 			flash[:notice] = "Your shelter information has been successfully updated"
 			redirect_to action: 'show', id: @shelter.id
 		else

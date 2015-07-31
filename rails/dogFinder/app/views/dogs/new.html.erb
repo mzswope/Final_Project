@@ -1,6 +1,6 @@
 <%= render "helpers/navbarForms" %>
 
-<div class="formDog">
+<div class="dogForm">
 	<%= form_for @dog, html: { :multipart => true } do |f| %>
 
 	<h2>Add your dog here:</h2>
@@ -22,10 +22,10 @@
 					<label for="gender female">Female</label>
 		<br /><br />
 	<%= f.label :age %>
-	<%= f.select :age, [['Puppy', 'puppy'], ['Young', 'young'], ['Adult', 'adult'], ['Senion', 'senior']]%>
+	<%= f.select :age, [['Puppy', 'puppy'], ['Young', 'young'], ['Adult', 'adult'], ['Senior', 'senior']]%>
 		<br /><br />
 	<%= f.label :size %>
-	<%= f.select :size, [['Small', 'small'], ['Medium', 'medium'], ['Large', 'large'], ['Extra-Large', 'extra-large']]%> <br />
+	<%= f.select :size, [['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]%> <br />
 
 	<h3>Good with: </h3>	
 		<ul>
