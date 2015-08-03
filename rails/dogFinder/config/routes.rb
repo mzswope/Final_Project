@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get 'shelters/:id/dogs' => 'shelters#show_dogs', as: 'shelter_dogs'
   
   get "/what-to-expect" => "sites#expect"
-
+  get "/filter" => "sites#filter"
 
 
   # default route

@@ -9,35 +9,26 @@ $(function(){
 		$('select').on('change', function(event){
 			var filter_by = event.currentTarget.id;
 	    	var filter_value = event.currentTarget.value;
-	    	switch (filter_by) {
-	    		case "gender":
-		    		self.filterGender(filter_value)
-		    		break;
-	    		case "age":
-	    			console.log("age");
-	    			break;
-	    		case "size":
-	    			console.log("size");
-	    			break;
-	    	}
+	    	self.getFilteredList(filter_by, filter_value);
 		});
 	}
 
-	DogFilter.prototype.filterGender = function(value) {
-		var results = []
+	DogFilter.prototype.getFilteredList = function(filter, value) {
 		var newValue = value.charAt(0).toUpperCase() + value.slice(1);
-		$(this.allDogs).each(function(index){
-			debugger;
-			if (this.gender == newValue) {
-				results.push(this);
-			}
-		})
-		console.log(results);
-	}
-
-	DogFilter.prototype.renderDog = function(dog) {
+		var data = { filter: filter, value: newValue}
 		
-	}
+		$.ajax({
+			url: '/filter',
+			data: data,
+			dataType: 'json',
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(error) {
+				console.log(error);
+			}
+		});
+	};
 
 	var dogFilter = new DogFilter();
 	dogFilter.setListeners();
