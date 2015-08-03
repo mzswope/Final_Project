@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731141830) do
+ActiveRecord::Schema.define(version: 20150803083249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(version: 20150731141830) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "shelter_id"
+    t.string   "shelter_name"
+    t.string   "shelter_address"
+    t.string   "shelter_city"
+    t.string   "shelter_providence"
+    t.string   "shelter_website"
+    t.string   "shelter_email"
   end
 
   add_index "dogs", ["age"], name: "index_dogs_on_age", using: :btree

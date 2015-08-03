@@ -1,12 +1,46 @@
-// $function(){
+$(function(){
 
-// 	var canvas = $("#map-canvas")
+	var DogFilter = function() {
+		this.allDogs = $(".dogs-list").data("dogs");
+	}
 
-// 	var mapOptions = {
-//           center: { lat: 41.3917782, lng: 2.177281},
-//           zoom: 12
-//         };
+	DogFilter.prototype.setListeners = function(){
+		var self = this;
+		$('select').on('change', function(event){
+			var filter_by = event.currentTarget.id;
+	    	var filter_value = event.currentTarget.value;
+	    	switch (filter_by) {
+	    		case "gender":
+		    		self.filterGender(filter_value)
+		    		break;
+	    		case "age":
+	    			console.log("age");
+	    			break;
+	    		case "size":
+	    			console.log("size");
+	    			break;
+	    	}
+		});
+	}
 
-//     var map = new google.maps.Map(canvas, mapOptions);
+	DogFilter.prototype.filterGender = function(value) {
+		var results = []
+		var newValue = value.charAt(0).toUpperCase() + value.slice(1);
+		$(this.allDogs).each(function(index){
+			debugger;
+			if (this.gender == newValue) {
+				results.push(this);
+			}
+		})
+		console.log(results);
+	}
 
-// }
+	DogFilter.prototype.renderDog = function(dog) {
+		
+	}
+
+	var dogFilter = new DogFilter();
+	dogFilter.setListeners();
+
+    
+})

@@ -79,6 +79,34 @@ hr	{
  	color: #827A74;
  }
  
+ /*---Header Dropdown Menu----*/
+
+.dropdown	{
+	display: inline-block;
+}
+
+.dropMenuTitles	{
+	font-size: 1em;
+	color: #B31518;
+}
+
+.caret	{
+	margin-right: 5px;
+	font-size: 10px;
+	color: #B31518;
+}
+
+.dropdown-menu li, .dropdown-menu li a	{	
+	display: block;
+	font-size: 12px;
+	color: #B31518;
+}
+
+.dropdown-menu li:hover, .dropdown-menu li a:hover	{
+	color: #8A8179;
+	text-decoration: none;
+}
+
 
 .headerAllSearchContainer	{
 	float: right;
@@ -133,36 +161,6 @@ hr	{
 #headerQuoted	{
 	color:#A1B5C7;
 }
-
-/*---Header Dropdown Menu----*/
-
-.dropdown	{
-	display: inline-block;
-}
-
-.dropMenuTitles	{
-	font-size: 1em;
-	color: #B31518;
-}
-
-.caret	{
-	margin-right: 5px;
-	font-size: 10px;
-	color: #B31518;
-}
-
-.dropdown-menu li, .dropdown-menu li a	{	
-	display: block;
-	font-size: 12px;
-	color: #B31518;
-}
-
-.dropdown-menu li:hover, .dropdown-menu li a:hover	{
-	color: #8A8179;
-	text-decoration: none;
-}
-
-/*---Image Slide---*/
 
 
 /*---Footer---*/

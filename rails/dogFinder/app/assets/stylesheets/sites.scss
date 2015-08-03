@@ -44,6 +44,35 @@
           box-sizing: border-box;
 }
 
+#advSearchHeader {
+  font-size: 1.4em;
+  color: #827A74;
+  font-style: italic;
+}
+
+#gallerySortSecondRow {
+  margin-left: 12em;
+}
+
+.sortLink {
+  padding-left: 2em;
+}
+
+.form-group  {
+  display: inline-block;
+  padding-left: 1em;
+  text-align: right;
+}
+
+.sortLink, .form-control, #sel1 {
+  width: 10em;
+  height: 35px;
+  font-size: .9em;
+  color: #B31518;
+  font-style: italic;
+  border: none;
+}
+
   /*---Pop-up Window ----*/
 
 
