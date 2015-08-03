@@ -53,6 +53,10 @@
       <td class="showListDetails"><%= @shelter.hours %></td>
     </tr>
     <tr>
+      <th class="showListTitles">Volunteers Needed</th>
+      <td class="showListDetails"><%= @shelter.volunteers %></td>
+    </tr>
+    <tr>
       <th class="showListTitles">Created</th>
       <td class="showListDetails"><%= @shelter.created_at %></td>
     </tr>
@@ -75,9 +79,9 @@
   </table>
     <br />
 
-  <a href="../dogs" title="link to list of dogs">View List of Dogs</a>
+  <%= link_to "View Your List of Dogs", shelter_dogs_path(@shelter) %>
   <br />
-  <%= link_to("Back to Shelter List", action: 'index', class: 'back-link') %>
+  <%= link_to "Back to Shelter List", shelters_path %>
 
 
 </div>

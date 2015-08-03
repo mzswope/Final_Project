@@ -8,22 +8,23 @@
 		<div class="grid effect-8">
 		  <div class="grid-sizer"></div>
 		  	<% @dogs.each do |dog| %>
-			  <div class="grid-item">
-			  	<div class="content" data-toggle="modal" data-target="#dogModal<%= dog.id %>">
-				  	<ul>
-				  		<li><%= image_tag dog.avatar.url :medium %></li>
-				        <li><%= dog.name %></li>
-				        <li><%= dog.breed %></li>
-				        <li><%= dog.gender %></li>
-				        <li><%= dog.size %></li>
-				        <li><%= dog.age %></li>
-				    </ul>
-				</div>
-		  	  </div>		  
+			  	<div class="grid-item">
+				  	<div class="content" data-toggle="modal" data-target="#dogModal<%= dog.id %>">
+				  	<h2><%= dog.name %></h2>
+					<hr />
+						<%= image_tag dog.avatar.url :medium %>	  	
+			  			<ul>
+					        <li><%= dog.breed %></li><br />
+					        <li><%= dog.gender %></li><br />
+					        <li><%= dog.size %></li><br />
+					        <li><%= dog.age %></li><br />
+					        <li><%= dog.shelter_id %></li>
+					    </ul>
+			    	</div>
+			  	</div> 
 			<% end %>
-		</div>
-	</div>
-	
+		  </div>
+		</div>	 	
 	<aside class="col-xs-12 col-md-3" id="sidebarSponsor">
 		<h2 id="sponsorsH2">Sponsors</h2>
 		<div class="sponsorContainer">
@@ -43,6 +44,7 @@
 		</div>
 	</aside>
 </div>
+
 <%= render "helpers/footer" %>
 
 <!-- Modal -->
@@ -51,25 +53,31 @@
 
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
-	      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			    <h4 class="modal-title" id="dogModalLabel"><%= dog.name %></h4>
-		  </div>
 	      <div class="modal-body">
-		  	<ul>
-		  		<li><%= image_tag dog.avatar.url :medium %></li>
-		        <li><%= dog.name %></li>
-		        <li><%= dog.breed %></li>
-		        <li><%= dog.gender %></li>
-		        <li><%= dog.size %></li>
-		        <li><%= dog.age %></li>
-		    </ul>
-      	  </div>     
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-	      </div>  
-        </div>  
+		      <div class="row">
+	  			<div class="col-sm-6 col-md-4">
+			  		<div class="thumbnail">					  		
+				  		<%= image_tag dog.avatar.url :medium %>
+				  		<div class="caption">
+				  		 <h3><%= dog.name %></h3>
+				  			<ul>
+						        <li><%= dog.breed %></li><br />
+						        <li><%= dog.gender %></li><br />
+						        <li><%= dog.size %></li><br />
+						        <li><%= dog.age %></li><br />
+						        <li><%= dog.shelter_id %></li>
+						    </ul>
+						 </div>
+					</div>    
+		      		<div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+		      </div>  
+	        </div>  
+		  </div>
+		 </div>
+		</div>
 	  </div>
 	</div>
 <% end %> 
+
 

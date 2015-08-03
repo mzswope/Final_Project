@@ -23,6 +23,13 @@ class SheltersController < ApplicationController
 		@shelter = Shelter.find(params[:id])
 	end
 
+	def show_dogs
+		@shelter = Shelter.find(params[:id])
+		@show_dogs = @shelter.dogs
+		# get the dogs of that shelter
+		# render the proper view
+	end
+
 	def edit
 		@shelter = Shelter.find(params[:id])
 	end

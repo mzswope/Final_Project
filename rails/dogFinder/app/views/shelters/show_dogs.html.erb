@@ -25,7 +25,7 @@
       <th>Good with Other Dogs</th>
       <th>View Details / Edit / Delete Record</th>
     </tr>
-    <% @dogs.each do |dog| %>
+    <%= @show_dogs.each do |dog| %>
       <tr>
         <td><%= image_tag dog.avatar.url :medium %></td>
         <td><%= dog.name %></td>
@@ -42,7 +42,7 @@
           <%= link_to("Delete Record", action: 'destroy', id: dog.id, class: 'action delete') %>
         </td>
       </tr>
-    <% end %>
+    <% end %> 
   </table>
 </div>
 

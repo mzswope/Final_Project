@@ -5,19 +5,23 @@ class DogsController < ApplicationController
 	end
 
 	def index
-     	@dogs = Dog.all
+		@shelter = Shelter.find(params[:shelter_id])
+     	@dogs = @shelter.dogs
   	end
 
 	def new
-		@dog = Dog.new
+		@shelter = Shelter.find params[:shelter_id] 
+    	@dog = @shelter.dogs.new 
+	
 	end
 
 	def create
-		@dog = Dog.new(dog_params)
-
+		@shelter = Shelter.find params[:shelter_id] 
+    	@dog = @shelter.dogs.new params[:dog]
+		
 		if @dog.save
 			flash[:notice] = "Your record has been successfully created"
-			redirect_to action: 'index'
+			redirect_to action: 'index', controller: 'dogs', shelter_id: @shelter.id
 		else
 			render('new')
 		end
@@ -28,7 +32,8 @@ class DogsController < ApplicationController
 	end
 
 	def edit
-		@dog = Dog.find(params[:id])
+		@shelter = Shelter.find params[:shelter_id]
+		@dog = @shelter.dogs.find params[:id]
 	end
 
 	def update
@@ -52,6 +57,6 @@ class DogsController < ApplicationController
 	private
 
 		def dog_params
-			params.require(:dog).permit(:avatar, :name, :gender, :size, :age, :people, :kids, :other_dogs)
+			params.require(:dog).permit(:avatar, :name, :breed, :gender, :size, :age, :people, :kids, :other_dogs, :shelter_id)
 		end
 end

@@ -1,7 +1,7 @@
 <%= render "helpers/navbarForms" %>
 
 <div class="dogForm">
-	<%= form_for @dog, html: { :multipart => true } do |f| %>
+	<%= form_for [@shelter, @dog] do |f| %>
 
 	<h2>Add your dog here:</h2>
 	<br />
@@ -15,14 +15,14 @@
 	<br /><br />
 	<%= f.label :gender %>
 				<br />
-					<%= radio_button_tag(:gender, "male") %>
+					<%= f.radio_button(:gender, "Male") %>
 					<label for="gender male">Male</label>
 
-					<%= radio_button_tag(:gender, "female") %>
+					<%= f.radio_button(:gender, "Female") %>
 					<label for="gender female">Female</label>
 		<br /><br />
 	<%= f.label :age %>
-	<%= f.select :age, [['Puppy', 'puppy'], ['Young', 'young'], ['Adult', 'adult'], ['Senior', 'senior']]%>
+	<%= f.select :age, [['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']]%>
 		<br /><br />
 	<%= f.label :size %>
 	<%= f.select :size, [['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]%> <br />
@@ -32,9 +32,9 @@
 			<li class="formListItems">
 				<%= f.label :people %>
 				<br />
-					<%= radio_button_tag(:people, "yes", ) %>
+					<%= f.radio_button(:people, "Yes", ) %>
 					<label for="people friendly">Yes</label>
-					<%= radio_button_tag(:people, "no", ) %>
+					<%= f.radio_button(:people, "No", ) %>
 					<label for="people friendly">No</label>
 			</li>
 			<li class="formListItems">
@@ -48,9 +48,9 @@
 			<li class="formListItems">
 				<%= f.label :other_dogs %>
 				<br />
-					<%= radio_button_tag(:other_dogs, "yes", ) %>
+					<%= radio_button_tag(:other_dogs, "Yes", ) %>
 					<label for="other_dogs friendly">Yes</label>
-					<%= radio_button_tag(:other_dogs, "no") %>
+					<%= radio_button_tag(:other_dogs, "No") %>
 					<label for="other_dogs friendly">No</label>
 			</li>
 		</ul>
@@ -61,5 +61,5 @@
 
 	<% end %>
 	<br /><br />
-	<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %>
+	<%= link_to("<< Back to List", action: 'index') %>
 </div>

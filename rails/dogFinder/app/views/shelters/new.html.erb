@@ -44,10 +44,10 @@
 
 	<%= f.label :volunteers %>
 				<br />
-					<%= radio_button_tag(:volunteers, "yes") %>
+					<%= f.radio_button(:volunteers, "Yes") %>
 					<label for="volunteers male">Yes</label>
 
-					<%= radio_button_tag(:volunteers, "no") %>
+					<%= f.radio_button(:volunteers, "No") %>
 					<label for="volunteers female">No</label>
 		<br /><br />
 
@@ -56,5 +56,5 @@
 
 	<% end %>
 	<br /><br />
-	<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %>
+	<%= link_to("<< Back to List", action: 'index') %>
 </div>

@@ -64,33 +64,36 @@ $('#mapModal').on('shown.bs.modal', function () {
 
 $(function() {
 
-var map;
+	var map;
+	var marker;
 
-function initialize () {
+	function initialize () {
 
-	var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
-    var mapOptions = {
-      zoom: 12,
-      center: myLatlng  
-  }
+		var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
+		var mapOptions = {
+	    zoom: 12,
+	    center: myLatlng  
+	  }
 
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  
+	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+	  
 
-	var marker = new google.maps.Marker({
-		    position: myLatlng,
-		    map: map,
-		    title:"Hello World!"
+		var marker = new google.maps.Marker({
+	    position: myLatlng,
+	    map: map,
+	    title:"Hello World!"
+		});
 
-	});
-  }
+		marker.setMap(map);
+	}
+
   google.maps.event.addDomListener(window, 'load', initialize);
+
 });
 
 
 
 // To add the marker to the map, call setMap();
-marker.setMap(map);
 
 
 // ---Photo Gallery Pop-up Window----

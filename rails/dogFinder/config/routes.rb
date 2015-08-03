@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   
   root "sites#home"
 
-  resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+    resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  end
+
+  # get 'shelters/:id/dogs' => 'shelters#show_dogs', as: 'shelter_dogs'
   
   get "/what-to-expect" => "sites#expect"
 
