@@ -53,8 +53,6 @@
 	</div>	
 </div>
 
-	<%= content_tag :div, class: "dogs-list", data: {dogs: @dogs} do %>
-	<%end%>
 	<div class="row">
 		<div class="col-xs-12 col-md-9">
 			<hr />
@@ -63,15 +61,15 @@
 			  	<% @dogs.each do |dog| %>
 				  	<div class="grid-item">
 					  	<div class="content" data-toggle="modal" data-target="#dogModal<%= dog.id %>">
-					  	<h2><%= dog.name %></h2>
-						<hr />
-							<%= image_tag dog.avatar.url :medium %>	  	
+					  	<h3 class="galleryHeader"><%= dog.name %></h3>
+							<%= image_tag dog.avatar.url, class: "galleryPhoto" %>	  	
 				  			<ul>
-						        <li><%= dog.breed %></li><br />
-						        <li><%= dog.gender %></li><br />
-						        <li><%= dog.size %></li><br />
-						        <li><%= dog.age %></li><br />
-						        <li><%= dog.shelter_providence %></li>
+						        <li>Breed: <span class="galleryText"><%= dog.breed %></span></li><br />
+						        <li>Gender: <span class="galleryText"><%= dog.gender %></span></li><br />
+						        <li>Size: <span class="galleryText"><%= dog.size %></span></li><br />
+						        <li>Age: <span class="galleryText"><%= dog.age %></span></li><br />
+						        <li>Providence: <span class="galleryText"><%= dog.shelter.providence %></span></li>
+						        <li>Shelter Name: <span class="galleryText"><%= dog.shelter.name %></span></li>
 						    </ul>
 				    	</div>
 				  	</div> 

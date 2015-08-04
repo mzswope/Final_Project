@@ -40,17 +40,17 @@
 			<li class="formListItems">
 				<%= f.label :kids %>
 				<br />
-					<%= radio_button_tag(:kids, "yes", ) %>
+					<%= f.radio_button(:kids, "Yes", ) %>
 					<label for="kid friendly">Yes</label>
-					<%= radio_button_tag(:kids, "no") %>
+					<%= f.radio_button(:kids, "No") %>
 					<label for="kid friendly">No</label>
 			</li>
 			<li class="formListItems">
 				<%= f.label :other_dogs %>
 				<br />
-					<%= radio_button_tag(:other_dogs, "Yes", ) %>
+					<%= f.radio_button(:other_dogs, "Yes", ) %>
 					<label for="other_dogs friendly">Yes</label>
-					<%= radio_button_tag(:other_dogs, "No") %>
+					<%= f.radio_button(:other_dogs, "No") %>
 					<label for="other_dogs friendly">No</label>
 			</li>
 		</ul>

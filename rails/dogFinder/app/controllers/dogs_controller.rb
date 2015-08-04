@@ -16,8 +16,8 @@ class DogsController < ApplicationController
 	end
 
 	def create
-		@shelter = Shelter.find params[:shelter_id] 
-    	@dog = @shelter.dogs.new params[:dog]
+		@shelter = Shelter.find params[:shelter_id]
+    	@dog = @shelter.dogs.new dog_params
 		
 		if @dog.save
 			flash[:notice] = "Your record has been successfully created"
@@ -57,6 +57,6 @@ class DogsController < ApplicationController
 	private
 
 		def dog_params
-			params.require(:dog).permit(:avatar, :name, :breed, :gender, :size, :age, :people, :kids, :other_dogs, :shelter_id, :shelter_name, :shelter_address, :shelter_city, :shelter_providence, :shelter_website, :shelter_email)
+			params.require(:dog).permit(:avatar,:name, :breed, :gender, :size, :age, :people, :kids, :other_dogs, :shelter_id)
 		end
 end
