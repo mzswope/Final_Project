@@ -1,7 +1,14 @@
 class SitesController < ApplicationController
 
 	def home
-		@dogs = Dog.all.limit(9)
+		@filters = DogsFilters.new(params[:age])
+		@dogs = Dog.all
+		if !@filters.age.nil?
+			@dogs = @dogs.where(age: @filters.age)
+		end
+#		if !@filters.size.nil?
+#			@dogs = @dogs.where(size: @filters.size)
+#		end
 		render :home
 	end
 

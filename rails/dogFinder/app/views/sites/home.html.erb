@@ -7,6 +7,10 @@
 		<h2 class="galleryTitle">photo gallery</h2>
 	</div>	
 	<div class="col-xs-12 col-md-6">
+		<%= form_tag("/", method: "get") do %>
+			<%= select_tag(:age, options_for_select([['Any', ''], ['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']], @filters.age )) %>
+  			<%= submit_tag("Search") %>
+		<% end %>
 			<span id="advSearchHeader">Filter by:</span>
 			<a class="sortLink" data-keyword="all" href="#">All Dogs</a>
 			<div class="form-group">
