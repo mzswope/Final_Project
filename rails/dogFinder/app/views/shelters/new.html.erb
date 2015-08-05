@@ -20,7 +20,9 @@
 	<%= f.text_field :city %>
 	<br />
 	<%= f.label :province %>
-	<%= f.text_field :province %>
+		<select class="form-control" id="sel1">
+	      <%= render "helpers/provinces" %>
+	    </select>
 	<br />
 	<%= f.label :postal_code %>
 	<%= f.text_field :postal_code %>

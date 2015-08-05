@@ -10,12 +10,13 @@
 		<%= form_tag("/", method: "get") do %>
 			<span id="advSearchHeader">Filter by:</span>
 			<a class="sortLink" data-keyword="all" href="#">All Dogs</a>
-			
+				<%= render "helpers/breedSelect" %>
 				<%= select_tag(:gender, options_for_select([['Gender', ''], ['Male', 'Male'], ['Female', 'Female']]), class: "galleryFilter") %>
 				<br />
 				<span id="gallerySortSecondRow">
 					<%= select_tag(:age, options_for_select([['Age', ''], ['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']]), class: "galleryFilter") %>
 					<%= select_tag(:size, options_for_select([['Size', ''], ['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]), class: "galleryFilter") %>
+					<%= render "helpers/provinceSelect" %>
 					<input type="hidden" name="searching" value="true">
 
 						<%= submit_tag("Filter") %>

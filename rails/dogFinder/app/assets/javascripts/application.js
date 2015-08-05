@@ -61,7 +61,7 @@ $(document).ready(function(){
 // var intervalHandler	=	setInterval(changeImage, 5000);
 
 
-// -----Photo Gallery------
+// -----Shelter Search------
 
 
 
@@ -73,33 +73,62 @@ $('#mapModal').on('shown.bs.modal', function () {
 
 $(function() {
 
-	var map;
-	var marker;
+  var geocoder;
+  var map;
+  function initialize() {
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(41.3917782, 2.1772809999999936);
+    var mapOptions = {
+      zoom: 12,
+      center: latlng
+    }
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  }
 
-	function initialize () {
+  function codeAddress() {
+    var address = document.getElementBylass("address").value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+ 	google.maps.event.addDomListener(window, 'load', initialize);
+ });
 
-		var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
-		var mapOptions = {
-	    zoom: 12,
-	    center: myLatlng  
-	  }
+// 	var map;
+// 	var marker;
 
-	  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+// 	function initialize () {
+
+// 		var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
+// 		var mapOptions = {
+// 	    zoom: 12,    
+// 	    center: myLatlng,
+// 	    MapTypeId: google.maps.MapTypeId.ROADMAP
+// 	  }
+
+// 	  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 	  
 
-		var marker = new google.maps.Marker({
-	    position: myLatlng,
-	    map: map,
-	    title:"Hello World!"
-		});
+// 		var marker = new google.maps.Marker({
+// 	    position: myLatlng,
+// 	    map: map,
+// 	    title:"You are here"
+// 		});
 
-		marker.setMap(map);
-	}
+// 		marker.setMap(map);
+// 	}
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+//   google.maps.event.addDomListener(window, 'load', initialize);
 
-});
-
+// });
 
 
 // To add the marker to the map, call setMap();

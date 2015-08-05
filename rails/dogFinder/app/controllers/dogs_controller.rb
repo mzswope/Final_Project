@@ -5,8 +5,12 @@ class DogsController < ApplicationController
 	end
 
 	def index
-		@shelter = Shelter.find(params[:shelter_id])
-     	@dogs = @shelter.dogs
+		# @shelter = Shelter.find(params[:shelter_id])
+  #    	@dogs = @shelter.dogs
+
+     	@search = Dogs.search(params[:q])
+     	@dogs = @search.results
+
   	end
 
 	def new
