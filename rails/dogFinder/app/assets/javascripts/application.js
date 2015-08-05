@@ -17,6 +17,15 @@
 //= require turbolinks
 //= require_tree .
 
+// ---Header----
+
+// ---Join Button----
+
+function buttonJoin() {
+  window.open("/shelters/new", "_self");
+}
+
+
 //---Header Quotes----
 
 

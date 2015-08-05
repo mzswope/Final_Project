@@ -27,7 +27,7 @@
     </tr>
     <% @dogs.each do |dog| %>
       <tr>
-        <td><%= image_tag dog.avatar.url :medium %></td>
+        <td><%= image_tag dog.avatar.url :thumb %></td>
         <td><%= dog.name %></td>
         <td><%= dog.breed %></td>
         <td><%= dog.gender %></td>

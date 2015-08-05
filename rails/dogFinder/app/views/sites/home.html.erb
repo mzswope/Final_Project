@@ -4,54 +4,23 @@
 
 <div class="row">
 	<div class="col-xs-12 col-md-3">
-		<h2 class="galleryTitle">photo gallery</h2>
+		<h2 class="galleryTitle">Find your dog here</h2>
 	</div>	
 	<div class="col-xs-12 col-md-6">
 		<%= form_tag("/", method: "get") do %>
-			<%= select_tag(:age, options_for_select([['Any', ''], ['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']], @filters.age )) %>
-  			<%= submit_tag("Search") %>
-		<% end %>
 			<span id="advSearchHeader">Filter by:</span>
 			<a class="sortLink" data-keyword="all" href="#">All Dogs</a>
-			<div class="form-group">
-				      <select class="form-control" id="sel1">
-				      <option value="all" selected="selected">Breed</option>
-				      <%= render "helpers/breeds" %>
-				      </select>
-				    </div>
-			<div class="form-group">
-			      <select class="form-control" id="sel1">
-			        <option value="all" selected="selected">Gender</option>
-			        <option value="male">Male</option>
-			        <option value="female">Female</option>
-			      </select>
-			</div><br />
-			<span id="gallerySortSecondRow">
-				<div class="form-group">
-				      <select class="form-control" id="sel1">
-				        <option value="all" selected="selected">Age</option>
-				        <option value="puppy">Puppy</option>
-				        <option value="young">Young</option>
-				        <option value="adult">Adult</option>
-				        <option value="senior">Senior</option>
-				      </select>
-				    </div>
-					<div class="form-group">
-				      <select class="form-control" id="sel1">
-				        <option value="all" selected="selected">Size</option>
-				        <option value="small">Small</option>
-				        <option value="medium">Medium</option>
-				        <option value="large">Large</option>
-				        <option value="extra-large">Extra-large</option>
-				      </select>
-				    </div>
-					<div class="form-group">
-				      <select class="form-control" id="sel1">
-				      <option value="all" selected="selected">Providence</option>
-				      <%= render "helpers/providences" %>
-				      </select>
-				    </div>
-			</span>
+			
+				<%= select_tag(:gender, options_for_select([['Gender', ''], ['Male', 'Male'], ['Female', 'Female']]), class: "galleryFilter") %>
+				<br />
+				<span id="gallerySortSecondRow">
+					<%= select_tag(:age, options_for_select([['Age', ''], ['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']]), class: "galleryFilter") %>
+					<%= select_tag(:size, options_for_select([['Size', ''], ['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]), class: "galleryFilter") %>
+					<input type="hidden" name="searching" value="true">
+
+						<%= submit_tag("Filter") %>
+				</span>
+			<% end %>
 			<div class="clear_both"></div>
 		</div>
 	</div>	
@@ -72,8 +41,7 @@
 						        <li>Gender: <span class="galleryText"><%= dog.gender %></span></li><br />
 						        <li>Size: <span class="galleryText"><%= dog.size %></span></li><br />
 						        <li>Age: <span class="galleryText"><%= dog.age %></span></li><br />
-						        <li>Providence: <span class="galleryText"><%= dog.shelter.providence %></span></li>
-						        <li>Shelter Name: <span class="galleryText"><%= dog.shelter.name %></span></li>
+						        <li>Province: <span class="galleryText"><%= dog.shelter.province %></span></li>
 						    </ul>
 				    	</div>
 				  	</div> 
@@ -106,30 +74,39 @@
 <!-- Modal -->
 <% @dogs.each do |dog| %>
 	<div class="modal fade" id="dogModal<%= dog.id %>" tabindex="-1" role="dialog" aria-labelledby="dogModalLabel">
-
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-body">
-		      <div class="row">
-	  			<div class="col-sm-6 col-md-4">
-			  		<div class="thumbnail">					  		
-				  		<%= image_tag dog.avatar.url :medium %>
-				  		<div class="caption">
-				  		 <h3><%= dog.name %></h3>
+		  		<div class="popupContainer">					  		
+			  		<%= image_tag dog.avatar.url, class: "popupPhoto" %>
+			  		<div class="caption">
+			  		 <h3><%= dog.name %></h3>
+			  		 	<div class="popupDogInfo">
 				  			<ul>
-						        <li><%= dog.breed %></li><br />
-						        <li><%= dog.gender %></li><br />
-						        <li><%= dog.size %></li><br />
-						        <li><%= dog.age %></li><br />
-						        <li><%= dog.shelter_id %></li>
+						        <li>Breed: <span class="popupText"><%= dog.breed %></span></li><br />
+						        <li>Gender: <span class="popupText"><%= dog.gender %></span></li><br />
+						        <li>Size: <span class="popupText"><%= dog.size %></span></li><br />
+						        <li>Age: <span class="popupText"><%= dog.age %></span></li><br />
+						        <li>Good with people: <span class="popupText"><%= dog.people %></li><br />
+						        <li>Good with kids: <span class="popupText"><%= dog.kids %></li><br />
+						        <li>Good with other dogs: <span class="popupText"><%= dog.other_dogs %></li><br />
 						    </ul>
-						 </div>
-					</div>    
-		      		<div class="modal-footer">
-		        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-		      </div>  
-	        </div>  
-		  </div>
+					    </div>
+					    <div class="popupShelterInfo">
+						    <ul>
+						        <li><%= dog.shelter.name %></li><br />
+						        <li><%= dog.shelter.address %></li><br />
+						        <li><%= dog.shelter.city %></li><br />
+						        <li><%= dog.shelter.province %></li><br />
+						        <li><%= dog.shelter.website %></li><br />
+						        <li><%= dog.shelter.email %></li>
+						    </ul>
+					    </div>
+					 </div>
+				</div>    
+	      		<div class="modal-footer">
+			        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+			    </div>  
 		 </div>
 		</div>
 	  </div>

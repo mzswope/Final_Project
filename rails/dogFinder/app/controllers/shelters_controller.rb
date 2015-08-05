@@ -55,6 +55,6 @@ class SheltersController < ApplicationController
 	private
 
 		def shelter_params
-			params.require(:shelter).permit(:avatar, :name, :address, :city, :providence, :postal_code, :phone, :website, :email, :hours, :volunteers)
+			params.require(:shelter).permit(:avatar, :name, :address, :city, :province, :postal_code, :phone, :website, :email, :hours, :volunteers)
 		end
 end

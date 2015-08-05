@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803083249) do
+ActiveRecord::Schema.define(version: 20150804100848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,6 @@ ActiveRecord::Schema.define(version: 20150803083249) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer  "shelter_id"
-    t.string   "shelter_name"
-    t.string   "shelter_address"
-    t.string   "shelter_city"
-    t.string   "shelter_providence"
-    t.string   "shelter_website"
-    t.string   "shelter_email"
   end
 
   add_index "dogs", ["age"], name: "index_dogs_on_age", using: :btree
@@ -51,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150803083249) do
     t.string   "name"
     t.string   "address"
     t.string   "city"
-    t.string   "providence"
+    t.string   "province"
     t.string   "postal_code"
     t.string   "phone"
     t.string   "website"
@@ -66,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150803083249) do
 
   add_index "shelters", ["name"], name: "index_shelters_on_name", using: :btree
   add_index "shelters", ["postal_code"], name: "index_shelters_on_postal_code", using: :btree
-  add_index "shelters", ["providence"], name: "index_shelters_on_providence", using: :btree
+  add_index "shelters", ["province"], name: "index_shelters_on_province", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
