@@ -6,10 +6,18 @@ Rails.application.routes.draw do
     resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 
-  # get 'shelters/:id/dogs' => 'shelters#show_dogs', as: 'shelter_dogs'
+  # resources :
+  resources :access, only: [:index, :login]
+
+  get 'access/login'
+  get  'admin', :to => "access#index"
+
   
-  get "/what-to-expect" => "sites#expect"
+  
+  get "sites/what_to_expect" => "sites#expect"
   get "/filter" => "sites#filter"
+
+  match ':controller(/:action(/:id))', :via => [:get, :post]
 
 
   # default route

@@ -1,7 +1,7 @@
 class SheltersController < ApplicationController
 
 	def index
-     	@shelters = Shelter.all
+     	@shelters = Shelter.order('name ASC')
   	end
 
 	def new
@@ -26,8 +26,6 @@ class SheltersController < ApplicationController
 	def show_dogs
 		@shelter = Shelter.find(params[:id])
 		@show_dogs = @shelter.dogs
-		# get the dogs of that shelter
-		# render the proper view
 	end
 
 	def edit

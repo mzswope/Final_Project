@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require isotope.pkgd.min
 //= require masonry.pkgd.min
 //= require turbolinks
 //= require_tree .
@@ -102,36 +103,7 @@ $(function() {
  	google.maps.event.addDomListener(window, 'load', initialize);
  });
 
-// 	var map;
-// 	var marker;
 
-// 	function initialize () {
-
-// 		var myLatlng = new google.maps.LatLng(41.3917782, 2.1772809999999936); 
-// 		var mapOptions = {
-// 	    zoom: 12,    
-// 	    center: myLatlng,
-// 	    MapTypeId: google.maps.MapTypeId.ROADMAP
-// 	  }
-
-// 	  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-	  
-
-// 		var marker = new google.maps.Marker({
-// 	    position: myLatlng,
-// 	    map: map,
-// 	    title:"You are here"
-// 		});
-
-// 		marker.setMap(map);
-// 	}
-
-//   google.maps.event.addDomListener(window, 'load', initialize);
-
-// });
-
-
-// To add the marker to the map, call setMap();
 
 
 // ---Photo Gallery Pop-up Window----

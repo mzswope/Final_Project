@@ -29,8 +29,6 @@ gem "paperclip", "~> 4.3"
 
 gem 'yelp', require: 'yelp'
 
-gem 'ransack'
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
