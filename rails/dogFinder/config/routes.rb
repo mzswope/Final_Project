@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # resources :
   resources :access, only: [:index, :login]
+  resources :admin_users, only: [:new, :create, :edit, :update, :show, :destroy] 
 
   get 'access/login'
   get  'admin', :to => "access#index"

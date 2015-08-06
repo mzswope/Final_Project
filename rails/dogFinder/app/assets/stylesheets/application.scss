@@ -20,8 +20,9 @@
 
  body	{
 	margin: 0;
-	font-family: "Arial Black";
-	font-size: 16px;
+	font-family: "Indie Flower", sans-serif, "Arial Black";
+	font-weight: 600;
+	font-size: 18px;
 }
 
 h1{font-size: 32px;}
@@ -58,6 +59,7 @@ hr	{
 
 .headerContainer	{
 	margin-top: 8px;
+	margin-left: 8px;
 }
 
 #headerNavigationContainer	{

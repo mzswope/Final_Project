@@ -1,0 +1,39 @@
+<%= render "helpers/navbarForms" %>
+
+<div class="createLoginForm">
+	<h2>Create Your Shelter Login</h2>
+
+	<%= form_for @admin_user do |f| %>
+		<table>
+			<tr>
+				<th><%= f.label :first_name, "First Name" %></th>
+				<td><%= f.text_field :first_name %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :last_name, "Last Name" %></th>
+				<td><%= f.text_field :last_name %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :shelter_name, "Name of Shelter" %></th>
+				<td><%= f.text_field :shelter_name %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :email %></th>
+				<td><%= f.text_field :email %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :username %></th>
+				<td><%= f.text_field :username %></td>
+			</tr>
+			<tr>
+				<th><%= f.label :password %></th>
+				<td><%= f.text_field :password %></td>
+			</tr>
+		</table>
+		<br /><br />
+	<div class="form-buttons">
+      <%= submit_tag('Create Admin User') %>
+    </div>
+
+  <% end %>
+</div>

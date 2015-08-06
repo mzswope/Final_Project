@@ -3,7 +3,6 @@ class AccessController < ApplicationController
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def index
-    # display text & links
   end
 
   def login
@@ -35,4 +34,15 @@ class AccessController < ApplicationController
     redirect_to(:action => "login")
   end
 
+  private
+
+  def confirm_logged_in
+    unless session[:user_id]
+      flash[:notice] = "Please log in"
+      redirect_to(:action => 'login')
+      return false
+    else
+      return true
+    end
+  end
 end

@@ -1,5 +1,7 @@
 class SheltersController < ApplicationController
 
+	before_action = :confirm_logged_in
+
 	def index
      	@shelters = Shelter.order('name ASC')
   	end

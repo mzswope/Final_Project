@@ -23,7 +23,7 @@
 // ---Join Button----
 
 function buttonJoin() {
-  window.open("/shelters/new", "_self");
+  window.open("/admin_users/new", "_self");
 }
 
 
@@ -45,34 +45,33 @@ $(document).ready(function(){
 })
 
 
-//----Background images----
-
-// var dogImages = document.getElementById("backgroundImage");
-// var imageArray = ["images/background/boxer_white_background.jpg", "images/background/bassett.jpg", "images/background/black_tan_dog.jpg", "images/background/dog-white-background.jpg", "images/background/Great-Dane-with_puppy.jpg", "images/background/bulldog_on_back.jpg", "images/background/small_white_terrier.jpg",];
-// var imageIndex = 0;
-// 
-// function changeImage (){
-	// dogImages.setAttribute("src", imageArray[imageIndex]);
-	// imageIndex++;
-		// if (imageIndex >=imageArray.length){
-			// imageIndex = 0;
-		// }
-// }
-// 
-// var intervalHandler	=	setInterval(changeImage, 5000);
-
-
 // -----Shelter Search------
 
 
 
 
 // ---Search for a Shelter on background-----
-$('#mapModal').on('shown.bs.modal', function () {
-  $('#mapInput').focus()
-});
+
 
 $(function() {
+
+//----Background images----
+  // var dogImages = document.getElementById("backgroundImage");
+  // var imageArray = ["assets/background/boxer_white_background.jpg", "assests/background/bassett.jpg", "assets/background/black_tan_dog.jpg", "assets/background/dog-white-background.jpg", "assets/background/Great-Dane-with_puppy.jpg", "assets/background/bulldog_on_back.jpg", "assets/background/small_white_terrier.jpg",];
+  // var imageIndex = 0;
+
+  // function changeImage (){
+  // 	dogImages.setAttribute("src", imageArray[imageIndex]);
+  // 	imageIndex++;
+  // 		if (imageIndex >=imageArray.length){
+  // 			imageIndex = 0;
+  // 		}
+  // }
+
+  // var intervalHandler	=	setInterval(changeImage, 5000);
+
+
+// ---Shelter Search Map---
 
   var geocoder;
   var map;
@@ -101,6 +100,7 @@ $(function() {
     });
   }
  	google.maps.event.addDomListener(window, 'load', initialize);
+
  });
 
 
@@ -108,14 +108,15 @@ $(function() {
 
 // ---Photo Gallery Pop-up Window----
 
-$('#dogModal<%= @dog.id %>').on('shown.bs.modal', function () {
-  $('#dogInput').focus()
-})
+// $('#dogModal<%= @dog.id %>').on('shown.bs.modal', function () {
+//   $('#dogInput').focus()
+// })
 
 // ---Footer-----
 
 function footerShelterClick() {
   window.open("/shelters", "_self");
 }
+
 
 

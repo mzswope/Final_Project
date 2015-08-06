@@ -18,8 +18,6 @@
 					<%= select_tag(:size, options_for_select([['Size', ''], ['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]), class: "galleryFilter") %>
 					<%= render "helpers/provinceSelect" %>
 					<input type="hidden" name="searching" value="true">
-
-						<%= submit_tag("Filter") %>
 				</span>
 			<% end %>
 			<div class="clear_both"></div>
