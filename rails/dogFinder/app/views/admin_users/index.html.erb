@@ -1,8 +1,5 @@
 <%= render "helpers/navbarForms" %>
-
-	<% if !flash[:notice].blank? %>
-	<%=flash[:notice] %>
-	<% end %>
+	
   <h2>Admin Users Information</h2>
 
   <table class="listing" summary="Admin users list">
@@ -26,4 +23,3 @@
 
 </div>
 
-<%= link_to("Add Your Shelter information next", controller: "shelters", action: "new", class: 'shelter-link') %>

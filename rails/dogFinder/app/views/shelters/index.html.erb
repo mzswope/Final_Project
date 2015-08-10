@@ -1,15 +1,7 @@
 <%= render "helpers/navbarForms" %>
 
-<% if !flash[:notice].blank? %>
-  <div class="shelterFLashNotice">
-    <%=flash[:notice] %>
-  </div>
-<% end %>
-
 <div class="shelterNew formShelter">
-	<h2>List of Shelters</h2>
-
-<%= link_to("Add Your Shelter to the Site", action: 'new', class: 'action new') %>
+	<h2>Current List of Shelters</h2>
 
   <table class="listings" summary="list of shelters">
     <tr class="shelterTableHeader">
@@ -24,7 +16,6 @@
       <th>Website</th>
       <th>Email</th>
       <th>Hours of Operation</th>
-      <th>View Details</th>
 
     </tr>
     <% @shelters.each do |shelter| %>
@@ -39,14 +30,11 @@
         <td><%= shelter.website %></td>
         <td><%= shelter.email %></td>
         <td><%= shelter.hours %></td>
-        <td>
-          <%= link_to("View Details", action: 'show', id: shelter.id, class: 'action show') %>
-          
-
-        </td>
       </tr>
     <% end %>
   </table>
+    <br />
+  <p>If your shelter does not appear on the list, please create a login to add your shelter to our community.</p><%= link_to("Click here to create your shelter's login.", controller: 'admin_users', action: 'new', class: 'action new') %> | <%= link_to( "Already a memeber?  Login here.", controller: 'access', action: 'login') %>
 </div>
 
 

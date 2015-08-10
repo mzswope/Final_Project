@@ -1,15 +1,15 @@
 <%= render "helpers/navbarForms" %>
 
 <div class="formShelter">
-	<%= form_for @shelter, html: { :multipart => true } do |f| %>
+	<%= form_for [@admin_user, @shelter] do |f| %>
 
 	<h2>Enter your shelter information:</h2>
 	<br />
 	<div class="formShelterName">
-		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<h3>Shelter Name</h3>
+		<%= shelter.admin_user.shelter_name %>
 	</div> <br />
-	<%= f.label :avatar %>
+	<%= f.label :avatar, Logo %>
 	<%= f.file_field :avatar %>
 		<br />
 

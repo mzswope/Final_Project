@@ -13,9 +13,13 @@ class AdminUsersController < ApplicationController
 
 		if @admin_user.save
 			flash[:notice] = "Your login has been created successfully.  Please enter your shelter information."
-			redirect_to controller: "shelters", action: 'new'
+			redirect_to action: 'show', id: @admin_user.id
 		else
 			render ('new')
+	end
+
+	def show
+		@admin_user = AdminUser.find(params[:id])
 	end
 
 	def edit

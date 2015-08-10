@@ -1,0 +1,41 @@
+<%= render "helpers/navbarForms" %>
+
+<% if !flash[:notice].blank? %>
+  <div class="adminFLashNotice">
+<%=flash[:notice] %>
+  </div>
+<% end %>
+
+  <h2>Your Admin Users Information</h2>
+
+  <table class="listing" summary="Admin users list">
+    <tr>
+        <th>Shelter Name</th>
+        <td><%= @admin_user.shelter_name %></td>
+      </tr>
+    <tr>
+      <th>Username</th>
+      <td><%= @admin_user.username %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= @admin_user.name %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= mail_to(@admin_user.email) %></td>
+    </tr>
+    <tr> 
+      <th>Actions</th>
+         <td class="actions">
+          <%= link_to('Edit', {:action => 'edit', :id => @admin_user.id}, :class => 'action edit') %><br />
+        </td>
+    </tr>
+  </table>
+  <%= link_to("Add Your Shelter information next", controller: "shelters", action: "new", class: 'shelter-link') %>
+</div>
+      
+      
+      
+   
+

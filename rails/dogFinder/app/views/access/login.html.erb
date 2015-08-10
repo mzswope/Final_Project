@@ -1,9 +1,7 @@
 <%= render "helpers/navbarForms" %>
 
-<% @page_title = "Admin Login" %>
-
 <div class="login">
-  <%= form_tag(:action => :attempt_login) do %>
+  <%= form_tag(action: 'login') do %>
   <table>
     <tr>
       <td><%= label_tag(:username) %></td>

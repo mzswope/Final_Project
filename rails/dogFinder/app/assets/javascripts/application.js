@@ -23,7 +23,7 @@
 // ---Join Button----
 
 function buttonJoin() {
-  window.open("/admin_users/new", "_self");
+  window.open("/shelters", "_self");
 }
 
 
@@ -57,7 +57,7 @@ $(function() {
 
 //----Background images----
   // var dogImages = document.getElementById("backgroundImage");
-  // var imageArray = ["assets/background/boxer_white_background.jpg", "assests/background/bassett.jpg", "assets/background/black_tan_dog.jpg", "assets/background/dog-white-background.jpg", "assets/background/Great-Dane-with_puppy.jpg", "assets/background/bulldog_on_back.jpg", "assets/background/small_white_terrier.jpg",];
+  // var imageArray = ["assets/background/boxer_white_background.jpg", "assets/background/bassett.jpg", "assets/background/black_tan_dog.jpg", "assets/background/dog-white-background.jpg", "assets/background/Great-Dane-with_puppy.jpg", "assets/background/bulldog_on_back.jpg", "assets/background/small_white_terrier.jpg",];
   // var imageIndex = 0;
 
   // function changeImage (){
