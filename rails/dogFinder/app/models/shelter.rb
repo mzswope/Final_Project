@@ -14,6 +14,7 @@ class Shelter < ActiveRecord::Base
     # has_secure_password
 
 	has_many :dogs
+    belongs_to :admin_users
 
 	validates_presence_of :address, :city, :province, :website
 

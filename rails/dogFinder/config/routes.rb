@@ -2,22 +2,26 @@ Rails.application.routes.draw do
   
   root "sites#home"
 
-  resources :admin_users, only: [:new, :create, :edit, :update, :show, :destroy]  do
+  
+
+  resources :admin_users, only: [:index, :new, :create, :edit, :update, :show, :destroy]  do
+    resources :access, only: [:index, :login]
     resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
   resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   end
 
-  # resources :
-  resources :access, only: [:index, :login]
+  # # resources :
+  # get 'access/index', :to => "access#index"
+  # get 'access/login', :to => "access#login"
+  # get 'access/login', :to => "access#attempt_login"
+  # get 'access/attempt_login', :to => "access#index"
+
   
 
-  get 'access/login'
-  get  'admin', :to => "access#index"
-
   
-  get "sites/what_to_expect" => "sites#expect"
+  get "sites/what_to_expect", :to => "sites#expect"
   # get "/filter" => "sites#filter"
 
 

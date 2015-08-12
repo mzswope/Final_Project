@@ -1,7 +1,14 @@
 <%= render "helpers/navbarForms" %>
 
 <div class="login">
-  <%= form_tag(action: 'login') do %>
+
+  <% if !flash[:notice].blank? %>
+    <div class="adminFLashNotice">
+<%=flash[:notice] %>
+  </div>
+  <% end %>
+  
+  <%= form_tag(action: 'attempt_login') do %>
   <table>
     <tr>
       <td><%= label_tag(:username) %></td>

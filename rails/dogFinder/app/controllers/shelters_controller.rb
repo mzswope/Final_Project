@@ -7,11 +7,13 @@ class SheltersController < ApplicationController
   	end
 
 	def new
-		@shelter = Shelter.new
+		@admin_user = AdminUser.find params[:admin_user_id] 
+    	@shelter = @admin_user.shelters.new 
 	end
 
 	def create
-		@shelter = Shelter.new(shelter_params)
+		@admin_user = AdminUser.find params[:admin_user_id]  
+    	@shelter = @admin_user.shelters.new shelter_params
 
 		if @shelter.save
 			flash[:notice] = "Your shelter has been successfully added"
@@ -31,7 +33,7 @@ class SheltersController < ApplicationController
 	end
 
 	def edit
-		@shelter = Shelter.find(params[:id])
+		@shelter = Shelter.find(params[:admin_user_id])
 	end
 
 	def update
@@ -55,6 +57,6 @@ class SheltersController < ApplicationController
 	private
 
 		def shelter_params
-			params.require(:shelter).permit(:avatar, :name, :address, :city, :province, :postal_code, :phone, :website, :email, :hours, :volunteers)
+			params.require(:shelter).permit(:avatar, :name, :address, :city, :province, :postal_code, :phone, :website, :email, :hours, :volunteers, :admin_user_id)
 		end
 end

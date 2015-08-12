@@ -2,10 +2,12 @@
 
 <div class="menu">
   <h2>Admin Menu</h2>
-  <div class="identity">Logged in as: <%= session[:username] %></div>
+
+  <div>Logged in as: <%= session[:username] %></div>
   <ul>
-    <li><%= link_to("Manage Content", :controller => 'subjects') %></li>
-    <li><%= link_to("Manage Admin Users", :controller => 'admin_users') %></li>
-    <li><%= link_to("Logout", :action => 'logout') %></li>
+    <li><%= link_to("Manage Admin Users", controller: 'admin_users', id: admin_user.id, class: 'accessLinks') %></li>
+    <li><%= link_to("Manage Shelter Information", controller: 'shelters', id: admin_user.id, class: 'accessLinks') %></li>
+    <li><%= link_to("Manage Dog Content", controller: 'dogs', id: admin_user.id, class: 'accessLinks') %></li>
+    <li><%= link_to("Logout", action: 'logout', id: admin_user.id, class: 'accessLinks') %></li>
   </ul>
 </div>

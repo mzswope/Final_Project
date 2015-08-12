@@ -31,7 +31,7 @@ class AdminUsersController < ApplicationController
 
 		if @admin_user.update_attributes(admin_user_params)
 			flash[:notice] = 'Admin user update'
-			redirect_to action: 'index'
+			redirect_to action: 'show', id: @admin_user.id
 		else
 			render('edit')
 		end
