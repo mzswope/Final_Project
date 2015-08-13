@@ -2,15 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-table	{
+.dogsTable	{
 	margin: auto;
 	width: 95%;
 }
 
-th 	{
-	width: 75px;
+.dogsTable th 	{
+	background-color: #747C82;
+	padding-left: 5px;
+	width: 7.8%;
 	height: 50px;
-	border: 2.5px solid black;
+	font-family: "Alegreya";
+	color: #fff; 
+	border: 2.5px solid #706A64;
 }
 
 td	{
@@ -23,4 +27,34 @@ td	{
 
 .dogForm, .dogShow, .dogNew	{
 	margin: 0 10px 0 10px;
+}
+
+//---Show Forms---
+.dogListings	{
+	margin: auto;
+}
+
+.dogListings th	{
+	background-color: #747C82;
+	width: 20%;
+	font-family: "Alegreya";
+	color: #fff;
+}
+
+.dogListings td	{
+	width: 30%;
+	padding-left: 10px;
+	font-family: "Alegreya";
+}
+
+//---Edit Forms---
+
+.dogEditForm {
+	margin: auto;
+}
+
+.dogEditForm th {
+	width: 20%;
+	font-family: "Alegreya";
+	color: #fff;
 }

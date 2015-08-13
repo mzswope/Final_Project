@@ -3,15 +3,33 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 th 	{
+	background-color: #817482;
+	padding-left: 5px;
 	width: 7.8%;
 	height: 50px;
-	border: 2.5px solid #827A74;
+	font-family: "Alegreya";
+	color: #fff; 
+	border: 2.5px solid #706A64;
 }
 
 td	{
+	padding-left: 5px;
 	width: 7.8%;
 	height: 50px;
+	font-family: "Alegreya";
 	border: 2.5px solid #827A74;
+}
+
+//---Index Form---
+
+.shelterTableHeader th {
+	padding-left: 5px;
+	font-family: "Alegreya";
+}
+
+.shelterTableDetails td {
+	padding-left: 5px;
+	font-family: "Alegreya";
 }
 
 //--Add/Edit/Delete dogs forms---
@@ -27,13 +45,14 @@ td	{
 }
 
 .showListTitles	{
-	background-color: #B31518;
+	/*background-color: #B31518;*/
 	width: 20%;
+	font-family: "Alegreya";
 	color: #fff;
 }
 
 .showListDetails	{
 	width: 30%;
 	padding-left: 10px;
-
+	font-family: "Alegreya";
 }

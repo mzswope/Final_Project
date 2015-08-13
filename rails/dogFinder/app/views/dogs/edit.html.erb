@@ -4,66 +4,74 @@
   <%= form_for [@shelter, @dog] do |f| %>
 
   <h2>Edit your dog's information here:</h2>
-  
+  <%= link_to("<< Back to List", action: 'index') %>
 <br />
   <div class="formDogName">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div> <br />
 
-    <h3>Image file</h3>
-    <%= f.file_field :avatar %>
-    <br />
-
-  <%= f.label :breed %>
-  <%= f.text_field :breed %>
-  <br /><br />
-  <%= f.label :gender %>
-        <br />
+    <table class="dogListings">
+      <tr>
+        <th><%= f.label :name %></th>
+        <td><%= f.text_field :name %></td>
+      </tr>
+       <tr>
+        <th>Image file</th>
+        <td><%= f.file_field :avatar %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :breed %></th>
+        <td><%= render "helpers/breedSelect" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :gender %></th>
+        <td>
           <%= f.radio_button(:gender, "Male") %>
           <label for="gender male">Male</label>
 
           <%= f.radio_button(:gender, "Female") %>
           <label for="gender female">Female</label>
-    <br /><br />
-  <%= f.label :age %>
-  <%= f.select :age, [['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']]%>
-    <br /><br />
-  <%= f.label :size %>
-  <%= f.select :size, [['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]%> <br />
-
-  <h3>Good with: </h3>  
-    <ul>
-      <li class="formListItems">
-        <%= f.label :people %>
-        <br />
-          <%= f.radio_button(:people, "Yes", ) %>
-          <label for="people friendly">Yes</label>
-          <%= f.radio_button(:people, "No", ) %>
-          <label for="people friendly">No</label>
-      </li>
-      <li class="formListItems">
-        <%= f.label :kids %>
-        <br />
-          <%= f.radio_button(:kids, "Yes", ) %>
-          <label for="kid friendly">Yes</label>
-          <%= f.radio_button(:kids, "No") %>
-          <label for="kid friendly">No</label>
-      </li>
-      <li class="formListItems">
-        <%= f.label :other_dogs %>
-        <br />
-          <%= f.radio_button(:other_dogs, "Yes", ) %>
-          <label for="other_dogs friendly">Yes</label>
-          <%= f.radio_button(:other_dogs, "No") %>
-          <label for="other_dogs friendly">No</label>
-      </li>
-    </ul>
-
-  <%= f.submit "update" %>
-</div>
-
+        </td> 
+      </tr>
+      <tr>
+        <th><%= f.label :age %></th>
+        <td><%= f.select :age, [['Puppy', 'Puppy'], ['Young', 'Young'], ['Adult', 'Adult'], ['Senior', 'Senior']]%></td> 
+      </tr>
+      <tr>
+        <th><%= f.label :size %></th>
+        <td><%= f.select :size, [['Small', 'Small'], ['Medium', 'Medium'], ['Large', 'Large'], ['Extra-Large', 'Extra-large']]%></td>
+      </tr>
+      <tr>
+        <th><h3>Good with: </h3></th>
+        <td>&nbsp</td>     
+      </tr>
+      <tr> 
+        <th><%= f.label :people %></th>
+        <td>
+            <%= f.radio_button(:people, "Yes", ) %>
+            <label for="people friendly">Yes</label>
+            <%= f.radio_button(:people, "No", ) %>
+            <label for="people friendly">No</label>
+        </td>
+      </tr>
+      <tr> 
+        <th><%= f.label :kids %></th>
+        <td>
+            <%= f.radio_button(:kids, "Yes", ) %>
+            <label for="kid friendly">Yes</label>
+            <%= f.radio_button(:kids, "No") %>
+            <label for="kid friendly">No</label>
+        </td>
+       </tr>
+       <tr>   
+        <th><%= f.label :other_dogs %></th>
+        <td>
+            <%= f.radio_button(:other_dogs, "Yes", ) %>
+            <label for="other_dogs friendly">Yes</label>
+            <%= f.radio_button(:other_dogs, "No") %>
+            <label for="other_dogs friendly">No</label>
+        </td>
+      </tr>
+    </table>
+    <span><%= f.submit "update" %></span>
   <% end %>
-<br />
-<%= link_to("<< Back to List", action: 'index') %>
+  </div>
 </div>

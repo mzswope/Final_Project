@@ -3,7 +3,7 @@
 <div class="shelterNew formShelter">
 	<h2>Current List of Shelters</h2>
 
-  <table class="listings" summary="list of shelters">
+  <table class="shelterListings" summary="list of shelters">
     <tr class="shelterTableHeader">
       
       <th>Logo</th>
@@ -19,7 +19,7 @@
 
     </tr>
     <% @shelters.each do |shelter| %>
-      <tr>
+      <tr class="shelterTableDetails">
         <td><%= image_tag shelter.avatar.url :thumb %></td>
         <td><%= shelter.name %></td>
         <td><%= shelter.address %></td>
@@ -34,7 +34,7 @@
     <% end %>
   </table>
     <br />
-  <p>If your shelter does not appear on the list, please create a login to add your shelter to our community.</p><%= link_to("Click here to create your shelter's login.", controller: 'admin_users', action: 'new', class: 'action new') %> | <%= link_to( "Already a memeber?  Login here.", controller: 'access', action: 'login') %>
+  <p>If your shelter does not appear on the list, please create a login to add your shelter to our community. <%= link_to("Click here to create your shelter's login.", controller: 'admin_users', action: 'new', class: 'actionNew') %></p>  <%= link_to( "Already a memeber?  Login here.", controller: 'access', action: 'login') %>
 </div>
 
 

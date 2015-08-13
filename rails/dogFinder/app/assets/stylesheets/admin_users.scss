@@ -1,3 +1,28 @@
 // Place all the styles related to the AdminUsers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.createLoginForm h2	{
+	margin-left: 20px;
+	font-weight: 600;
+}
+
+.loginTable	{
+	margin: auto;
+	width: 50%;
+}
+
+.loginTable th {
+	background-color: #758274;
+	padding-left: 5px;
+	font-family: "Alegreya";
+}
+
+.loginTable td	{
+	padding-left: 5px;
+	font-family: "Alegreya";
+}
+
+.form-buttons	{
+	margin-left: 68%;
+}

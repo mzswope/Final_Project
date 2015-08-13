@@ -4,13 +4,14 @@ Rails.application.routes.draw do
 
   
 
-  resources :admin_users, only: [:index, :new, :create, :edit, :update, :show, :destroy]  do
-    resources :access, only: [:index, :login]
-    resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  end
-  resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
-  end
+  resources :admin_users, only: [:index, :new, :create, :edit, :update, :show, :destroy]
+
+    resources :shelters, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :dogs, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+    end
+    #     resources :access, only: [:index, :login]
+
+  # get 'admin_users/show', :to => "shelters#new"
 
   # # resources :
   # get 'access/index', :to => "access#index"
@@ -19,16 +20,14 @@ Rails.application.routes.draw do
   # get 'access/attempt_login', :to => "access#index"
 
   
-
-  
   get "sites/what_to_expect", :to => "sites#expect"
   # get "/filter" => "sites#filter"
 
 
   # default route
-  # match ':controller(/:action(/:id))', :via => [:get, :post]
+  match ':controller(/:action(/:id))', :via => [:get, :post]
 
-  # match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
+  match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

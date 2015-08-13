@@ -8,8 +8,9 @@
 
 <div class="dogShow">
   <h2>Dog Details View</h2>
+  <%= link_to("<< Back to List", action: 'index', class: 'back-link') %>
 
-  <table class="listings" summary="Dog detail view">
+  <table class="dogListings">
   
     <tr>
       <th>Photo</th>
@@ -61,7 +62,5 @@
     </tr>
   </table>
     <br /><br />
-
-<%= link_to("<< Back to List", action: 'index', class: 'back-link') %>
 
 </div>
